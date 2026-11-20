@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Taskora – Work Smart. Earn Globally.</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f7fb;--card:#fff;--ink:#0f1f2e;--mute:#64748b;--line:#e8edf3;--g:#16a34a;--g2:#22c55e;--navy:#0b2239;--gold:#f5b21b;--chip:#e9f8ef;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+:root:not([data-theme="light"]){}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0a141f;--card:#112233;--ink:#eaf1f8;--mute:#93a4b6;--line:#1e3349;--chip:#12382a}}
+:root[data-theme="dark"]{--bg:#0a141f;--card:#112233;--ink:#eaf1f8;--mute:#93a4b6;--line:#1e3349;--chip:#12382a}
+*{box-sizing:border-box;margin:0}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{font-family:'Plus Jakarta Sans',system-ui,-apple-system,Segoe UI,sans-serif;background:var(--bg);color:var(--ink);display:flex;min-height:100vh}
+button{font:inherit;cursor:pointer;border:0}
+aside{width:236px;background:var(--navy);color:#cfe0ee;padding:18px 12px;display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:100vh;flex-shrink:0;overflow-y:auto}
+.logo{font-size:23px;font-weight:800;color:#fff;letter-spacing:.5px;padding:4px 10px 0}
+.logo i{color:var(--g2);font-style:normal}
+.tag{font-size:11px;padding:0 10px 16px;color:#9fb6c9}
+.nav{display:flex;gap:12px;align-items:center;padding:11px 12px;border-radius:10px;background:none;color:#cfe0ee;text-align:left;width:100%;font-weight:500}
+.nav:hover{background:#ffffff14}
+.nav.on{background:var(--g);color:#fff;font-weight:700}
+.invite{margin-top:auto;border:1px solid #ffffff22;border-radius:14px;padding:16px;text-align:center;color:#fff;font-weight:700;background:#ffffff0d}
+.invite button{margin-top:10px;background:var(--g2);color:#04230f;border-radius:20px;padding:9px 14px;font-weight:700}
+main{flex:1;min-width:0;padding:16px 22px 28px}
+header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
+#menu{display:none;background:var(--card);color:var(--ink);font-size:20px;padding:8px 12px;border-radius:10px}
+header input{flex:1;max-width:420px;padding:12px 16px;border-radius:12px;border:1px solid var(--line);background:var(--card);color:var(--ink);font:inherit}
+.sp{flex:1}
+.user{display:flex;gap:10px;align-items:center;font-weight:700;font-size:14px}
+.av{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#16a34a,#0b2239);color:#fff;display:grid;place-items:center;font-weight:800}
+.pro{font-size:11px;background:var(--chip);color:var(--g);padding:2px 8px;border-radius:10px;display:inline-block}
+.hero{border-radius:18px;padding:30px;color:#fff;background:linear-gradient(120deg,#052e2b,#0a4d3a 55%,#0f6b43);display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;align-items:center}
+.hero h1{font-size:clamp(28px,4vw,40px);font-weight:800}.hero h1 span{color:var(--g2)}
+.hero p{margin:8px 0 18px;font-size:18px;max-width:420px;font-weight:500}
+.btn{background:var(--g);color:#fff;padding:10px 20px;border-radius:22px;font-weight:700}
+.btn:hover{background:#15803d}.btn.sm{padding:8px 22px;border-radius:18px}
+.tier{background:#0b2239cc;border-radius:14px;padding:18px;min-width:250px}
+.tier b.gold{font-size:24px;color:var(--gold);display:block;margin:6px 0 10px}
+.bar{height:8px;background:#ffffff33;border-radius:6px;overflow:hidden;margin:6px 0}
+.bar i{display:block;height:100%;background:var(--gold);border-radius:6px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:16px 0}
+.card{background:var(--card);border-radius:16px;padding:18px;border:1px solid var(--line)}
+.stat{display:flex;gap:14px;align-items:center}
+.ic{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;font-size:22px;flex-shrink:0}
+.stat small{color:var(--mute);font-size:13px}.stat strong{display:block;font-size:24px;font-weight:800}
+.up{color:var(--g);font-size:12px;font-weight:600}
+.cols{display:grid;grid-template-columns:1.6fr 1fr;gap:14px;margin-bottom:14px}
+h2{font-size:19px;font-weight:800;margin-bottom:10px}
+.row{display:flex;gap:14px;align-items:center;padding:12px 0;border-top:1px solid var(--line)}
+.row .t{flex:1;min-width:0}.row .t b{display:block}.row .t small{color:var(--mute)}
+.price{background:var(--chip);color:var(--g);font-weight:700;font-size:13px;padding:3px 9px;border-radius:8px;white-space:nowrap}
+.thumb{width:54px;height:44px;border-radius:8px;background:var(--chip);display:grid;place-items:center;font-size:24px}
+.ring{width:120px;height:120px;border-radius:50%;display:grid;place-items:center;flex-shrink:0}
+.ring div{width:96px;height:96px;border-radius:50%;background:var(--card);display:grid;place-items:center;text-align:center;font-weight:800;font-size:24px;line-height:1.1}
+.ring small{font-size:13px;font-weight:500;display:block}
+.copy{display:flex;gap:8px;margin-top:8px}
+.copy input,.f input,.f select,.f textarea{flex:1;padding:11px 12px;border:1px solid var(--line);border-radius:10px;background:var(--bg);color:var(--ink);font:inherit;width:100%}
+.act{display:flex;justify-content:space-between;padding:10px 0;border-top:1px solid var(--line);font-size:14px;gap:10px}
+.pos{color:var(--g);font-weight:700}.neg{color:#e11d48;font-weight:700}
+.promo{border-radius:16px;padding:24px;color:#fff;background:linear-gradient(120deg,#052e2b,#0f6b43)}
+.promo h2{color:var(--g2);font-size:24px}
+table{width:100%;border-collapse:collapse;font-size:14px}th,td{text-align:left;padding:11px 8px;border-top:1px solid var(--line)}th{color:var(--mute);font-weight:600}
+.pill{padding:3px 10px;border-radius:10px;font-size:12px;font-weight:700}
+.pill.p{background:#fff4d6;color:#a16207}.pill.a{background:var(--chip);color:var(--g)}
+.f{display:grid;gap:12px;max-width:420px}.f label{font-size:13px;color:var(--mute);font-weight:600;display:grid;gap:5px}
+#toast{position:fixed;left:50%;bottom:calc(24px + env(safe-area-inset-bottom,0px));transform:translateX(-50%) translateY(30px);background:#0b2239;color:#fff;padding:12px 20px;border-radius:12px;opacity:0;transition:.25s;pointer-events:none;z-index:50}
+#toast.show{opacity:1;transform:translateX(-50%)}
+.scrim{display:none}
+@media(max-width:980px){.grid4{grid-template-columns:1fr 1fr}.cols{grid-template-columns:1fr}}
+@media(max-width:820px){
+aside{position:fixed;left:0;top:0;z-index:30;transform:translateX(-100%);transition:.25s;padding-top:calc(18px + env(safe-area-inset-top,0px))}
+body.open aside{transform:none}body.open .scrim{display:block;position:fixed;inset:0;background:#0007;z-index:20}
+#menu{display:block}.uname{display:none}main{padding:12px}header input{min-width:0}.hero{padding:22px}.tier{width:100%}
+.wide{overflow-x:auto}}
+@media(max-width:480px){.grid4{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.auth{position:fixed;inset:0;z-index:60;display:none;place-items:center;padding:16px;background:rgba(11,34,57,.94);overflow-y:auto}.auth .card{width:100%;max-width:420px;margin:auto}.pill.r{background:#ffe4e6;color:#be123c}
+</style>
+</head>
+<body>
+<aside id="side">
+  <div class="logo"><i>T</i>ASKORA</div><div class="tag">Work Smart. Earn Globally.</div>
+  <div id="nav"></div>
+  <div class="invite">🎁<br>Invite Friends<br>Earn More!<br><button onclick="go('referrals')">Get your link</button></div>
+  <div class="tag" style="padding:14px 6px 0">Version 1.0.0</div>
+</aside>
+<div class="scrim" onclick="document.body.classList.remove('open')"></div>
+<main>
+  <header>
+    <button id="menu" aria-label="Open menu" onclick="document.body.classList.toggle('open')">☰</button>
+    <input id="q" type="search" placeholder="Search tasks…" oninput="if(view!=='tasks')view='tasks';render()">
+    <div class="sp"></div>
+    <div class="user" id="usr"></div>
+  </header>
+  <section id="app"></section>
+</main>
+<div id="ov" class="auth"></div>
+<div id="toast" role="status"></div>
+<script>
+const SUPPORT_EMAIL='support@yourdomain.com'; // change this to your real support email
+const NAV=[['dashboard','🏠','Dashboard'],['tasks','📋','Find Tasks'],['subs','📝','My Submissions'],['wallet','👛','My Wallet'],['withdraw','⬆️','Withdrawals'],['referrals','👥','Referrals'],['membership','👑','Membership'],['learn','📖','Learning Hub'],['support','🎧','Support'],['settings','⚙️','Settings']];
+let T=null,me=null,view='dashboard',D={tasks:[],subs:[],tx:[],wd:[],aSubs:[],aWd:[]};
+try{T=localStorage.getItem('tk')}catch(e){}
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const kes=n=>'KES '+Number(n).toLocaleString('en-KE');
+const ago=d=>{const m=Math.floor((Date.now()-new Date(d))/60000);return m<1?'just now':m<60?m+'m ago':m<1440?Math.floor(m/60)+'h ago':Math.floor(m/1440)+'d ago'};
+const pc=s=>s==='Approved'||s==='Paid'?'a':s==='Rejected'?'r':'p';
+function toast(m){const t=$('toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2600)}
+function showOv(h){$('ov').innerHTML=h;$('ov').style.display='grid'}
+function hideOv(){$('ov').style.display='none';$('ov').innerHTML=''}
+function applyTheme(){let t='auto';try{t=localStorage.getItem('tk-theme')||'auto'}catch(e){}document.documentElement.dataset.theme=t==='auto'?'':t}
+
+async function api(path,opt={}){
+ const r=await fetch('/api'+path,{method:opt.method||(opt.body?'POST':'GET'),headers:{'Content-Type':'application/json',...(T?{Authorization:'Bearer '+T}:{})},body:opt.body?JSON.stringify(opt.body):undefined});
+ const j=await r.json().catch(()=>({}));
+ if(r.status===401&&T&&!path.startsWith('/auth'))logout();
+ if(!r.ok)throw new Error(j.error||'Something went wrong');
+ return j;
+}
+function logout(){T=null;me=null;try{localStorage.removeItem('tk')}catch(e){}showAuth('login')}
+
+function showAuth(mode){
+ const reg=mode==='register',ref=new URLSearchParams(location.search).get('ref')||'';
+ showOv(`<div class="card"><div class="logo" style="color:var(--ink)"><i>T</i>ASKORA</div><p style="color:var(--mute);margin:0 0 14px">Work smart. Earn globally.</p><h2>${reg?'Create your account':'Welcome back'}</h2><div class="f">
+ ${reg?'<label>Full name<input id="a_name" autocomplete="name"></label><label>M-Pesa phone<input id="a_phone" inputmode="tel" placeholder="0712 345 678"></label>':''}
+ <label>Email<input id="a_email" type="email" autocomplete="email"></label>
+ <label>Password${reg?' (8+ characters)':''}<input id="a_pw" type="password" autocomplete="${reg?'new-password':'current-password'}"></label>
+ ${reg?`<label>Referral code (optional)<input id="a_ref" value="${esc(ref)}"></label>`:''}
+ <button class="btn" onclick="authGo('${mode}')">${reg?'Sign up':'Log in'}</button></div>
+ <p style="margin-top:14px;font-size:14px;color:var(--mute)">${reg?'Already have an account?':'New here?'} <a href="#" style="color:var(--g);font-weight:700" onclick="showAuth('${reg?'login':'register'}');return false">${reg?'Log in':'Create account'}</a></p></div>`);
+}
+async function authGo(mode){
+ const b={email:$('a_email').value.trim(),password:$('a_pw').value};
+ if(mode==='register'){b.name=$('a_name').value;b.phone=$('a_phone').value;b.ref=$('a_ref').value.trim()}
+ try{const r=await api('/auth/'+mode,{body:b});T=r.token;try{localStorage.setItem('tk',T)}catch(e){}await boot()}catch(e){toast(e.message)}
+}
+async function loadAdmin(){[D.aSubs,D.aWd]=await Promise.all([api('/admin/submissions'),api('/admin/withdrawals')])}
+async function refresh(){
+ const [m,t,s,x,w]=await Promise.all([api('/me'),api('/tasks'),api('/submissions'),api('/transactions'),api('/withdrawals')]);
+ me=m;D.tasks=t;D.subs=s;D.tx=x;D.wd=w;
+ if(me.isAdmin&&view==='admin')await loadAdmin();
+}
+async function boot(){
+ if(!T)return showAuth(new URLSearchParams(location.search).get('ref')?'register':'login');
+ try{await refresh()}catch(e){return showAuth('login')}
+ hideOv();render();
+}
+function go(v){view=v;document.body.classList.remove('open');location.hash=v;render();scrollTo(0,0);refresh().then(render).catch(()=>{})}
+
+function startTask(id){
+ const k=D.tasks.find(x=>x.id==id);if(!k)return;
+ showOv(`<div class="card"><h2>${esc(k.title)}</h2><p style="color:var(--mute);margin-bottom:12px">${esc(k.description)}</p><div class="f"><label>Your answer / feedback<textarea id="ans" rows="5" placeholder="Write at least 10 characters"></textarea></label><button class="btn" onclick="submitTask(${k.id})">Submit for ${kes(k.reward)}</button><button class="btn" style="background:var(--line);color:var(--ink)" onclick="hideOv()">Cancel</button></div></div>`);
+}
+async function submitTask(id){
+ const a=$('ans').value.trim();if(a.length<10)return toast('Write at least 10 characters');
+ try{await api('/tasks/'+id+'/submit',{body:{answer:a}});hideOv();toast('Submitted – under review');await refresh();render()}catch(e){toast(e.message)}
+}
+async function withdraw(){
+ try{await api('/withdrawals',{body:{amount:$('wa').value,phone:$('wp').value}});toast('Withdrawal requested');await refresh();render()}catch(e){toast(e.message)}
+}
+function copyLink(){const l=me.link;(navigator.clipboard?navigator.clipboard.writeText(l):Promise.reject()).then(()=>toast('Link copied'),()=>{const i=$('rl');if(i){i.select();document.execCommand('copy')}toast('Link copied')})}
+async function adm(path){try{await api('/admin/'+path,{method:'POST'});await refresh();render();toast('Done')}catch(e){toast(e.message)}}
+async function addTask(){
+ try{await api('/admin/tasks',{body:{title:$('nt').value,description:$('nd').value,reward:+$('nr').value,minutes:+$('nm').value||10}});toast('Task added');await refresh();render()}catch(e){toast(e.message)}
+}
+
+const taskRow=k=>`<div class="row"><div class="thumb">${esc(k.icon)}</div><div class="t"><b>${esc(k.title)}</b><small>${esc(k.description)}</small></div><div><span class="price">${kes(k.reward)}</span><br><small style="color:var(--mute)">⏱ ${k.minutes} min</small></div><button class="btn sm" onclick="startTask(${k.id})">Start</button></div>`;
+const actRows=()=>D.tx.slice(0,5).map(a=>`<div class="act"><span>${esc(a.text)}</span><span class="${a.amount<0?'neg':'pos'}">${a.amount===0?'':(a.amount<0?'-':'+')+kes(Math.abs(a.amount))}</span><span style="color:var(--mute)">${ago(a.created_at)}</span></div>`).join('')||'<p style="color:var(--mute)">No activity yet.</p>';
+const refCard=()=>{const p=Math.min(me.refs,10)*10;return `<div class="card"><h2>👥 Your referral progress</h2><div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap"><div class="ring" style="background:conic-gradient(var(--g2) ${p}%,var(--line) 0)"><div><span>${Math.min(me.refs,10)}/10<small>Invited</small></span></div></div><div class="card" style="flex:1;min-width:140px"><small style="color:var(--mute)">Current reward</small><br><strong style="font-size:24px">${kes(me.refReward)}</strong></div></div><p style="margin-top:14px;font-size:14px">Your referral link</p><div class="copy"><input id="rl" readonly value="${esc(me.link)}"><button class="btn" onclick="copyLink()">Copy</button></div></div>`};
+const empty=t=>`<p style="color:var(--mute)">${t}</p>`;
+
+const V={
+dashboard(){const left=Math.max(0,10-me.refs),inRev=D.subs.filter(s=>s.status==='Pending').length;
+ return `<div class="hero"><div><h1>Welcome back, <span>${esc(me.name.split(' ')[0])}!</span></h1><p>Keep completing tasks, grow your earnings, and unlock more rewards.</p><button class="btn" onclick="go('tasks')">Explore tasks →</button></div>
+ <div class="tier">Your current tier<b class="gold">👑 ${me.tier} Member</b>${me.nextTier?`Next tier: ${me.nextTier}<div class="bar"><i style="width:${Math.min(me.refs,10)*10}%"></i></div><small>Invite ${left} more friends (${me.refs}/10)</small>`:'<small>You’ve reached the top tier 🎉</small>'}</div></div>
+ <div class="grid4">
+ <div class="card stat"><div class="ic" style="background:#dcfce7">💰</div><div><small>Available balance</small><strong>${kes(me.balance)}</strong></div></div>
+ <div class="card stat"><div class="ic" style="background:#dbeafe">✅</div><div><small>Tasks completed</small><strong>${me.done}</strong></div></div>
+ <div class="card stat"><div class="ic" style="background:#ede9fe">👥</div><div><small>Referrals</small><strong>${me.refs}</strong></div></div>
+ <div class="card stat"><div class="ic" style="background:#ffedd5">⏳</div><div><small>Pending rewards</small><strong>${kes(me.pending)}</strong><small>${inRev} task${inRev===1?'':'s'} under review</small></div></div></div>
+ <div class="cols"><div class="card"><h2>Available tasks <a href="#tasks" style="float:right;font-size:14px;color:var(--g)">View all →</a></h2>${D.tasks.slice(0,3).map(taskRow).join('')||empty('No tasks right now. Check back soon.')}</div>${refCard()}</div>
+ <div class="cols"><div class="card"><h2>⚡ Recent activity</h2>${actRows()}</div><div class="promo"><h2>Grow together</h2><p style="margin:6px 0 16px">Invite friends and earn rewards based on your network.</p><button class="btn" onclick="go('referrals')">Invite now →</button></div></div>`},
+tasks(){const q=$('q').value.toLowerCase();const l=D.tasks.filter(k=>(k.title+k.description).toLowerCase().includes(q));
+ return `<div class="card"><h2>Find tasks</h2>${l.map(taskRow).join('')||empty('No tasks match.')}</div>`},
+subs(){return `<div class="card wide"><h2>My submissions</h2>${D.subs.length?`<table><tr><th>Task</th><th>Reward</th><th>Status</th><th>When</th></tr>${D.subs.map(s=>`<tr><td>${esc(s.title)}</td><td>${kes(s.reward)}</td><td><span class="pill ${pc(s.status)}">${s.status}</span></td><td>${ago(s.created_at)}</td></tr>`).join('')}</table>`:empty('No submissions yet. Start a task to see it here.')}</div>`},
+wallet(){return `<div class="grid4"><div class="card stat"><div class="ic" style="background:#dcfce7">💰</div><div><small>Available</small><strong>${kes(me.balance)}</strong></div></div><div class="card stat"><div class="ic" style="background:#ffedd5">⏳</div><div><small>Pending</small><strong>${kes(me.pending)}</strong></div></div></div><div class="card"><h2>Transactions</h2>${actRows()}<br><button class="btn" onclick="go('withdraw')">Withdraw</button></div>`},
+withdraw(){return `<div class="cols"><div class="card"><h2>Withdraw to M-Pesa</h2><p style="color:var(--mute);margin-bottom:12px">Balance: ${kes(me.balance)} · Minimum KES 100</p><div class="f"><label>Amount (KES)<input id="wa" type="number" min="100" placeholder="500"></label><label>M-Pesa number<input id="wp" value="${esc(me.phone||'')}" placeholder="0712 345 678" inputmode="tel"></label><button class="btn" onclick="withdraw()">Request withdrawal</button></div></div><div class="card wide"><h2>History</h2>${D.wd.length?`<table><tr><th>Amount</th><th>Number</th><th>Status</th><th>When</th></tr>${D.wd.map(w=>`<tr><td>${kes(w.amount)}</td><td>${esc(w.phone)}</td><td><span class="pill ${pc(w.status)}">${w.status}</span></td><td>${ago(w.created_at)}</td></tr>`).join('')}</table>`:empty('No withdrawals yet.')}</div></div>`},
+referrals(){return `<div class="cols">${refCard()}<div class="card"><h2>How it works</h2><p style="line-height:1.7">Share your link. You earn KES 200 when a friend you invite gets their first task approved. Reach 10 invites to unlock Platinum.</p></div></div>`},
+membership(){const T4=[['Bronze','0 referrals','Basic tasks'],['Silver','3 referrals','Higher paying tasks'],['Gold','6 referrals','Priority review'],['Platinum','10 referrals','Fast withdrawals & bonus tasks']];
+ return `<div class="grid4">${T4.map(t=>`<div class="card" style="${t[0]===me.tier?'outline:2px solid var(--g)':''}"><h2>${t[0]}${t[0]===me.tier?' ✓':''}</h2><b>${t[1]}</b><p style="color:var(--mute);margin-top:6px">${t[2]}</p></div>`).join('')}</div>`},
+learn(){return `<div class="card"><h2>Learning hub</h2>${['How to pass task reviews','Write great survey answers','Staying safe online','Getting paid faster'].map(x=>`<div class="act"><span>📘 ${x}</span><span style="color:var(--g)">Coming soon</span></div>`).join('')}</div>`},
+support(){return `<div class="card"><h2>Support</h2><p style="line-height:1.7;margin-bottom:14px">Need help with a task, payment or your account? Send us an email and we’ll get back to you.</p><a class="btn" style="display:inline-block;text-decoration:none" href="mailto:${esc(SUPPORT_EMAIL)}?subject=Taskora%20support%20(${esc(me.email)})">Email support</a></div>`},
+settings(){let t='auto';try{t=localStorage.getItem('tk-theme')||'auto'}catch(e){}
+ return `<div class="card"><h2>Settings</h2><div class="f"><label>Name<input value="${esc(me.name)}" disabled></label><label>Email<input value="${esc(me.email)}" disabled></label><label>Theme<select onchange="try{localStorage.setItem('tk-theme',this.value)}catch(e){}applyTheme()"><option value="auto" ${t==='auto'?'selected':''}>Match device</option><option value="light" ${t==='light'?'selected':''}>Light</option><option value="dark" ${t==='dark'?'selected':''}>Dark</option></select></label><button class="btn" style="background:#e11d48" onclick="logout()">Log out</button></div></div>`},
+admin(){
+ if(!me.isAdmin)return empty('Admins only.');
+ return `<div class="card wide"><h2>Pending submissions</h2>${D.aSubs.length?`<table><tr><th>Member</th><th>Task</th><th>Answer</th><th></th></tr>${D.aSubs.map(s=>`<tr><td>${esc(s.name)}<br><small>${esc(s.email)}</small></td><td>${esc(s.title)}<br>${kes(s.reward)}</td><td style="max-width:240px">${esc(s.answer)}</td><td style="white-space:nowrap"><button class="btn sm" onclick="adm('submissions/${s.id}/approve')">Approve</button> <button class="btn sm" style="background:#e11d48" onclick="adm('submissions/${s.id}/reject')">Reject</button></td></tr>`).join('')}</table>`:empty('Nothing to review.')}</div><br>
+ <div class="card wide"><h2>Pending withdrawals</h2>${D.aWd.length?`<table><tr><th>Member</th><th>Amount</th><th>M-Pesa</th><th></th></tr>${D.aWd.map(w=>`<tr><td>${esc(w.name)}</td><td>${kes(w.amount)}</td><td>${esc(w.phone)}</td><td style="white-space:nowrap"><button class="btn sm" onclick="adm('withdrawals/${w.id}/paid')">Mark paid</button> <button class="btn sm" style="background:#e11d48" onclick="adm('withdrawals/${w.id}/reject')">Reject</button></td></tr>`).join('')}</table>`:empty('No pending withdrawals.')}<p style="color:var(--mute);font-size:13px;margin-top:10px">Send the money by M-Pesa first, then tap Mark paid.</p></div><br>
+ <div class="card"><h2>Add a task</h2><div class="f"><label>Title<input id="nt"></label><label>Description<input id="nd"></label><label>Reward (KES)<input id="nr" type="number" min="1"></label><label>Minutes<input id="nm" type="number" min="1" value="10"></label><button class="btn" onclick="addTask()">Add task</button></div></div>`}
+};
+
+function render(){
+ if(!me)return;
+ const items=NAV.concat(me.isAdmin?[['admin','🛡️','Admin']]:[]);
+ $('nav').innerHTML=items.map(n=>`<button class="nav ${n[0]===view?'on':''}" onclick="go('${n[0]}')"><span>${n[1]}</span>${n[2]}</button>`).join('');
+ $('usr').innerHTML=`<div class="av">${esc(me.name.split(/\s+/).map(w=>w[0]).slice(0,2).join('').toUpperCase())}</div><div class="uname">${esc(me.name)}<br><span class="pro">${me.tier} Member</span></div>`;
+ if(!V[view])view='dashboard';
+ $('app').innerHTML=V[view]();
+}
+addEventListener('hashchange',()=>{const h=location.hash.slice(1);if(me&&V[h]&&h!==view)go(h)});
+{const h=location.hash.slice(1);if(V[h])view=h}
+applyTheme();boot();
+</script>
+</body>
+</html>
